@@ -1,6 +1,6 @@
 # Rank-2-Trap
 
-**KG-JEPA** — A Graph Joint-Embedding Predictive Architecture (Graph-JEPA) for reasoning over knowledge graphs built from academic papers.
+
 
 Rank-2-Trap builds a heterogeneous knowledge graph from a corpus of scientific papers (authors, works, concepts, citations, etc.), learns self-supervised graph representations with a JEPA-style objective, and evaluates those representations on **reasoning** and **link-prediction** tasks. It also includes a faithful Graph-JEPA ablation using Random-Walk Structural Encodings (RWSE) with a GINE backbone.
 
