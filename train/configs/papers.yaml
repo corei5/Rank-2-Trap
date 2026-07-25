@@ -1,0 +1,31 @@
+dataset: papers
+num_workers: 8
+model:
+  gMHA_type: Hadamard
+  gnn_type: GINEConv
+  nlayer_gnn: 2
+  nlayer_mlpmixer: 4
+  hidden_size: 512
+  papers_nout: 174        # set to PapersDataset's printed num_classes
+train:
+  lr_patience: 20
+  epochs: 100             # was 50 — collapse fix needs longer to converge
+  batch_size: 128
+  lr: 0.0001              # was 0.0002 — halved; 2e-4 collapses small graphs faster
+  runs: 5
+  # ── anti-collapse regularizer weights (read in your training loop) ──
+  var_weight: 1.0         # NEW — VICReg variance hinge weight
+  cov_weight: 0.04        # NEW — VICReg covariance weight
+metis:
+  n_patches: 8
+pos_enc:
+  rw_dim: 15
+  patch_rw_dim: 15        # MUST equal rw_dim
+  lap_dim: 0
+  patch_num_diff: 0
+jepa:
+  enable: true            # NEW — get_model.py reads cfg.jepa.enable; make it explicit
+  num_context: 1
+  num_targets: 2
+  ema_momentum: 0.996     # NEW — EMA target-network momentum
+device: 0
