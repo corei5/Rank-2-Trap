@@ -16,7 +16,7 @@ Rank-2-Trap builds a heterogeneous knowledge graph from a corpus of scientific p
 
 ---
 
-## 📁 Repository Structure
+## 📁 Repository Structure (Need to fix)
 
 ```
 Rank-2-Trap/
