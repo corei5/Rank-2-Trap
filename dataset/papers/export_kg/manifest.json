@@ -1,0 +1,78 @@
+{
+  "created": "2026-07-15T09:05:16",
+  "raw_dir": "/nfs/home/rabbyg/JEPA/Graph-JEPA/dataset/papers/raw",
+  "cache_path": "/nfs/home/rabbyg/JEPA/Graph-JEPA/dataset/papers/processed/hetero_graphA.pt",
+  "coarse_label": true,
+  "split_seed": 42,
+  "train_ratio": 0.9,
+  "node_types": [
+    "paper",
+    "field",
+    "claim",
+    "method",
+    "result",
+    "evidence",
+    "implication"
+  ],
+  "num_papers": 57903,
+  "num_claims": 251938,
+  "num_methods": 57903,
+  "num_results": 57903,
+  "num_evidence": 373438,
+  "num_implications": 251938,
+  "feature_dim": 384,
+  "total_nodes": 1051511,
+  "total_triples": 993120,
+  "feature_dtype": "float32",
+  "node_offsets": {
+    "paper": [
+      0,
+      57903
+    ],
+    "field": [
+      57903,
+      58391
+    ],
+    "claim": [
+      58391,
+      310329
+    ],
+    "method": [
+      310329,
+      368232
+    ],
+    "result": [
+      368232,
+      426135
+    ],
+    "evidence": [
+      426135,
+      799573
+    ],
+    "implication": [
+      799573,
+      1051511
+    ]
+  },
+  "splits": {
+    "sample": {
+      "n": 4,
+      "ids": [
+        0,
+        1,
+        2,
+        3
+      ]
+    }
+  },
+  "files": {
+    "full_graph/node_features.npy": "all node embeddings, row-aligned to node_index.json['index']",
+    "full_graph/node_index.json": "row -> {feat_row, type, local_idx, id, text}",
+    "full_graph/graph_structure.ttl": "all edges as RDF triples (ids match index)",
+    "schema.ttl": "ontology (classes + object properties)",
+    "split.json": "train/test paper ids (seed-fixed)",
+    "subgraphs/<split>/<shard>/paper_<id>/subgraph.json": "per-paper nested JSON with text",
+    "subgraphs/<split>/<shard>/paper_<id>/subgraph.ttl": "per-paper RDF",
+    "subgraphs/<split>/all_subgraphs.jsonl": "all per-paper JSON, one per line"
+  }
+}

@@ -1,0 +1,17 @@
+@prefix ex: <http://example.org/kg#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+ex:Paper       a owl:Class ; rdfs:label "Paper" .
+ex:Claim       a owl:Class ; rdfs:label "Claim" .
+ex:Method      a owl:Class ; rdfs:label "Method" .
+ex:Result      a owl:Class ; rdfs:label "Result" .
+ex:Evidence    a owl:Class ; rdfs:label "Evidence" .
+ex:Implication a owl:Class ; rdfs:label "Implication" .
+
+ex:hasClaim     a owl:ObjectProperty ; rdfs:domain ex:Paper ; rdfs:range ex:Claim .
+ex:hasMethod    a owl:ObjectProperty ; rdfs:domain ex:Paper ; rdfs:range ex:Method .
+ex:hasResult    a owl:ObjectProperty ; rdfs:domain ex:Paper ; rdfs:range ex:Result .
+ex:supportedBy  a owl:ObjectProperty ; rdfs:domain ex:Claim ; rdfs:range ex:Evidence .
+ex:challengedBy a owl:ObjectProperty ; rdfs:domain ex:Claim ; rdfs:range ex:Evidence .
+ex:implies      a owl:ObjectProperty ; rdfs:domain ex:Claim ; rdfs:range ex:Implication .
