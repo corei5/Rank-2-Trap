@@ -74,6 +74,8 @@ pip install sentence-transformers transformers
 
 ### 2. Data
 
+**Dataset:** [`ai4sci-tib/LAION_arxiv-open`](https://huggingface.co/datasets/ai4sci-tib/LAION_arxiv-open) on Hugging Face.
+
 Place your raw paper JSON files in:
 
 ```
